@@ -212,9 +212,6 @@
   // ============================================================
   // 2. WEDDING AUDIO PLAYER (SITA KALYANA VAIBHOGAME)
   // ============================================================
-  const btnMusicMenu  = document.getElementById('btn-music-menu');
-  const audioDropdown = document.getElementById('audio-dropdown');
-  const trackChoices  = document.querySelectorAll('.track-choice');
   let isPlaying = false;
 
   if (weddingAudio && btnAudio) {
@@ -242,45 +239,6 @@
     btnAudio.addEventListener('click', (e) => {
       e.stopPropagation();
       toggleWeddingMusic();
-    });
-
-    if (btnMusicMenu && audioDropdown) {
-      btnMusicMenu.addEventListener('click', (e) => {
-        e.stopPropagation();
-        audioDropdown.classList.toggle('is-open');
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('#audio-menu')) {
-          audioDropdown.classList.remove('is-open');
-        }
-      });
-    }
-
-    trackChoices.forEach((choice) => {
-      choice.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const newSrc = choice.dataset.src;
-        const trackName = choice.querySelector('.track-name')?.textContent || 'Track';
-
-        trackChoices.forEach(c => c.classList.remove('active'));
-        choice.classList.add('active');
-
-        weddingAudio.pause();
-        weddingAudio.src = newSrc;
-        weddingAudio.load();
-        weddingAudio.play().then(() => {
-          isPlaying = true;
-          if (audioCtrl) audioCtrl.classList.add('is-playing');
-          showToast('సంగీతం: ' + trackName + ' 🎶');
-        }).catch(err => {
-          console.log('Track play error:', err);
-        });
-
-        if (audioDropdown) {
-          audioDropdown.classList.remove('is-open');
-        }
-      });
     });
 
     const tryAutoPlayOnFirstTouch = () => {
