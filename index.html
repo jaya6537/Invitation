@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Srikanth & Divya — కల్యాణ ఆహ్వాన పత్రిక | Telugu Wedding Invitation</title>
+  <meta name="description" content="శుభలేఖ — శ్రీకాంత్ మరియు దివ్యల వివాహ మహోత్సవ ఆహ్వాన పత్రిక. You are cordially invited to celebrate the sacred union of Srikanth & Divya."/>
+  
+  <!-- Favicon / Meta -->
+  <meta name="theme-color" content="#FAF8F5"/>
+  <meta property="og:title" content="💍 శ్రీకాంత్ & దివ్య — కల్యాణ ఆహ్వాన శుభలేఖ"/>
+  <meta property="og:description" content="15 నవంబర్ 2026 — శుభ ముహూర్తం ఉదయం 7:15 గంటలకు. Join us in blessing the couple."/>
+
+  <!-- Google Fonts: Royal Indian Luxury Typography Hierarchy (Rozha One, Pinyon Script, Marcellus, Suranna) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Marcellus&family=Noto+Serif+Telugu:wght@400;500;600;700&family=Pinyon+Script&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&family=Suranna&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ======================== REALISTIC FLOWER PETAL SHOWER CANVAS ======================== -->
+<canvas id="ambient-canvas" class="ambient-canvas"></canvas>
+<!-- ======================== SOUND ICON CONTROLLER (SITA KALYANA VAIBHOGAME) ======================== -->
+<div class="audio-control" id="audio-control" title="Toggle Wedding Music">
+  <button class="audio-btn" id="btn-audio" aria-label="Toggle Wedding Music">
+    <div class="sound-icon-box">
+      <!-- Unmuted sound icon with waves -->
+      <svg class="sound-icon sound-icon--on" viewBox="0 0 24 24">
+        <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+        <path d="M15.5 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M18.8 5.2a9.5 9.5 0 0 1 0 13.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <!-- Muted sound icon -->
+      <svg class="sound-icon sound-icon--off" viewBox="0 0 24 24">
+        <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+        <line x1="22" y1="9" x2="16" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="16" y1="9" x2="22" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </button>
+
+  <!-- Track Switcher Button & Dropdown -->
+  <div class="audio-menu" id="audio-menu">
+    <button class="audio-menu-toggle" id="btn-music-menu" aria-label="Choose Wedding Track" title="Change Music">
+      <svg viewBox="0 0 24 24" class="menu-note-icon"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" fill="currentColor"/></svg>
+    </button>
+    <div class="audio-dropdown" id="audio-dropdown">
+      <p class="dropdown-title">సంగీత ఎంపిక · Wedding Music</p>
+      <button class="track-choice active" data-src="assets/sita_kalyana_vaibhogame.m4a">
+        <span class="track-icon">🌸</span>
+        <div class="track-meta">
+          <span class="track-name">సీతా కల్యాణ వైభోగమే</span>
+          <span class="track-sub">Latest Wedding Hit (Anni Manchi Sakunamule)</span>
+        </div>
+      </button>
+      <button class="track-choice" data-src="assets/peaceful_divine_flute.mp3">
+        <span class="track-icon">🪈</span>
+        <div class="track-meta">
+          <span class="track-name">దివ్య వేణు గానం</span>
+          <span class="track-sub">Divine Bansuri Flute (Classical)</span>
+        </div>
+      </button>
+      <button class="track-choice" data-src="assets/sacred_veena_endaro.mp3">
+        <span class="track-icon">🪕</span>
+        <div class="track-meta">
+          <span class="track-name">మంగళ వీణా నాదం</span>
+          <span class="track-sub">Sacred Veena (Endaro Mahanubhavulu)</span>
+        </div>
+      </button>
+      <button class="track-choice" data-src="assets/romantic_veena_melody.mp3">
+        <span class="track-icon">✨</span>
+        <div class="track-meta">
+          <span class="track-name">రాగ తరంగిణి</span>
+          <span class="track-sub">Chitti Babu Melodic Veena</span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <audio id="wedding-audio" loop preload="auto">
+    <source id="wedding-source" src="assets/sita_kalyana_vaibhogame.m4a" type="audio/mp4"/>
+  </audio>
+</div>
+<!-- ======================== MAIN INVITATION BODY ======================== -->
+<main id="main" class="main">
+
+  <!-- ======================== 1. HERO SECTION ======================== -->
+  <section class="hero" id="hero">
+    <div class="hero__mandapam-backdrop">
+      <img src="assets/hero_mandapam.png" alt="Sacred Kalyana Mandapam" class="hero__mandapam-img"/>
+      <div class="hero__gradient-overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <!-- Invocation -->
+      <div class="hero__invocation reveal-up" data-delay="1">
+        <div class="namam-icon-wrap">
+          <svg class="tirunama-svg" viewBox="0 0 100 45">
+            <!-- Sacred Tirupati Namam & Shankha Chakra -->
+            <path d="M50 8 L50 40" stroke="#C89B3C" stroke-width="4" stroke-linecap="round"/>
+            <path d="M38 10 Q44 26 48 38" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+            <path d="M62 10 Q56 26 52 38" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+            <circle cx="16" cy="22" r="8" fill="none" stroke="#C89B3C" stroke-width="2"/>
+            <circle cx="84" cy="22" r="8" fill="none" stroke="#C89B3C" stroke-width="2"/>
+          </svg>
+        </div>
+        <p class="hero__telugu-sloka">॥ శ్రీ లక్ష్మీ వేంకటేశ్వర స్వామియే నమః ॥</p>
+        <p class="hero__telugu-sub">శ్రీరస్తు · శుభమస్తు · కల్యాణమస్తు</p>
+      </div>
+
+      <!-- Ornamental Divider -->
+      <div class="hero__ornament reveal-up" data-delay="2">
+        <img src="assets/border_ornament.png" alt="Ornament" class="ornament-svg"/>
+      </div>
+
+      <!-- Couple Grand Typography -->
+      <div class="hero__couple-box reveal-up" data-delay="3">
+        <h1 class="hero__groom-name">Srikanth</h1>
+        <div class="hero__ampersand-wrap">
+          <span class="hero__amp-line"></span>
+          <span class="hero__amp">&amp;</span>
+          <span class="hero__amp-line"></span>
+        </div>
+        <h1 class="hero__bride-name">Divya</h1>
+        <p class="hero__telugu-pair">శ్రీకాంత్ <span>సహధర్మచారిణి</span> దివ్య</p>
+      </div>
+
+      <p class="hero__invitation-note reveal-up" data-delay="4">
+        We cordially invite you and your family to celebrate the sacred bond of holy matrimony
+      </p>
+
+      <!-- SUMUHURTHAM ROYAL PLAQUE -->
+      <div class="muhurtham-plaque reveal-up" data-delay="5">
+        <div class="plaque-header">
+          <svg class="gold-kalash-icon" viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 0-4 4c0 1.5.8 2.8 2 3.5V11a2 2 0 0 0-2 2v1c0 2 1.5 3.5 3 4l-1 4h8l-1-4c1.5-.5 3-2 3-4v-1a2 2 0 0 0-2-2V9.5c1.2-.7 2-2 2-3.5a4 4 0 0 0-4-4z" fill="currentColor"/></svg>
+          <span class="plaque-badge">సుముహూర్తం · SACRED MUHURTHAM</span>
+        </div>
+        
+        <div class="plaque-panchangam">
+          <p class="panchangam-line">స్వస్తిశ్రీ చాంద్రమాన శ్రీ క్రోధన నామ సంవత్సరం</p>
+          <p class="panchangam-sub">దక్షిణాయనం · శరదృతువు · కార్తిక శుద్ధ సప్తమి, భానువారం</p>
+        </div>
+
+        <div class="plaque-main-date">
+          <div class="p-date-col">
+            <span class="p-month">NOVEMBER</span>
+            <span class="p-day">15</span>
+            <span class="p-year">2026</span>
+          </div>
+          <div class="p-divider"></div>
+          <div class="p-time-col">
+            <span class="p-time-label">లగ్నం & సమయం</span>
+            <span class="p-time">ఉదయం 07:15 AM</span>
+            <span class="p-lagnam">వృషభ లగ్నమందు · రోహిణీ నక్షత్ర యుక్త</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROYAL COUNTDOWN DIALS -->
+      <div class="countdown-wrap reveal-up" data-delay="6">
+        <p class="countdown-title">కల్యాణ ఘడియల శుభారంభం</p>
+        <div class="countdown-dials" id="countdown">
+          <div class="dial-item">
+            <div class="dial-box"><span class="dial-val" id="cd-d">00</span></div>
+            <span class="dial-lbl">DAYS</span>
+          </div>
+          <div class="dial-sep">:</div>
+          <div class="dial-item">
+            <div class="dial-box"><span class="dial-val" id="cd-h">00</span></div>
+            <span class="dial-lbl">HOURS</span>
+          </div>
+          <div class="dial-sep">:</div>
+          <div class="dial-item">
+            <div class="dial-box"><span class="dial-val" id="cd-m">00</span></div>
+            <span class="dial-lbl">MINUTES</span>
+          </div>
+          <div class="dial-sep">:</div>
+          <div class="dial-item">
+            <div class="dial-box"><span class="dial-val" id="cd-s">00</span></div>
+            <span class="dial-lbl">SECONDS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="hero__scroll-down reveal-up" data-delay="7">
+        <span class="scroll-text">ఆశీర్వదించండి · Scroll Down</span>
+        <svg class="scroll-arrow" viewBox="0 0 24 24"><path d="M12 4v16m-7-7l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================== 2. SACRED INVITATION LETTER ======================== -->
+  <section class="section invitation-letter" id="invite-letter">
+    <div class="muggu-pattern-bg"></div>
+
+    <div class="royal-card letter-card reveal-up">
+      <div class="card-corner card-corner--tl"></div>
+      <div class="card-corner card-corner--tr"></div>
+      <div class="card-corner card-corner--bl"></div>
+      <div class="card-corner card-corner--br"></div>
+
+      <div class="letter-header">
+        <img src="assets/ganesha_art.png" alt="Ganesha" class="letter-ganesha-sm"/>
+        <h3 class="letter-heading-telugu">కల్యాణ పత్రిక</h3>
+        <p class="letter-heading-en">CORDIAL WEDDING INVITATION</p>
+      </div>
+
+      <div class="letter-body">
+        <p class="letter-stanza-telugu">
+          "సకుటుంబ సపరివార సమేతంగా విచ్చేసి,<br/>
+          మా నూతన వధూవరులను మీ అమూల్యమైన ఆశీస్సులతో<br/>
+          హృదయపూర్వకంగా ఆశీర్వదించ ప్రార్థన."
+        </p>
+
+        <p class="letter-stanza-en">
+          With the abundant divine grace of <strong>Lord Venkateswara Swamy</strong> and our revered ancestors,
+          we joyously invite you and your family to witness and bless the auspicious marriage of our beloved children:
+        </p>
+
+        <div class="letter-families">
+          <div class="fam-col">
+            <span class="fam-tag">వరుని తల్లిదండ్రులు</span>
+            <p class="fam-names">శ్రీ వెలిచేటి రామకృష్ణ రాజు<br/>శ్రీమతి సరస్వతీ దేవి</p>
+          </div>
+          <div class="fam-divider">
+            <svg viewBox="0 0 24 24" class="fam-knot-icon"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="fam-col">
+            <span class="fam-tag">వధువు తల్లిదండ్రులు</span>
+            <p class="fam-names">శ్రీ కాకర్లపూడి నారాయణ మూర్తి<br/>శ్రీమతి పద్మావతీ దేవి</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="letter-footer">
+        <img src="assets/border_ornament.png" alt="Ornament" class="ornament-svg ornament-svg--flip"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 3. THE COUPLE (వధూవరులు) ======================== -->
+  <section class="section couple-section" id="couple">
+    <div class="section-badge reveal-up">
+      <span class="badge-line"></span>
+      <span class="badge-text">వధూవరుల పరిచయం · THE COUPLE</span>
+      <span class="badge-line"></span>
+    </div>
+
+    <!-- Couple Center Illustration -->
+    <div class="couple-art-frame reveal-up">
+      <div class="couple-art-halo"></div>
+      <img src="assets/couple_illustration.png" alt="Srikanth and Divya" class="couple-art-img"/>
+    </div>
+
+    <!-- Sanskrit Mangala Sloka Banner -->
+    <div class="mangala-sloka-card royal-card reveal-up">
+      <p class="sanskrit-text">
+        "మాంగల్యం తంతునానేన మమ జీవన హేతునా ।<br/>
+        కంఠే బధ్నామి సుభగే సంజీవ శరదః శతమ్ ॥"
+      </p>
+      <p class="sanskrit-meaning">
+        "This sacred thread, the source of my life's fulfilment, I tie around your neck, O blessed one. May you live happily with me for a hundred autumns."
+      </p>
+    </div>
+
+    <!-- Bride & Groom Detailed Profile Cards -->
+    <div class="couple-profiles">
+      <!-- GROOM -->
+      <div class="royal-card profile-card reveal-up">
+        <div class="profile-tag">చిరంజీవి · THE GROOM</div>
+        <h3 class="profile-name">Srikanth Raju</h3>
+        <p class="profile-degree">B.Tech, M.S. (Software Architect)</p>
+        
+        <div class="profile-divider"></div>
+        
+        <div class="profile-lineage">
+          <p class="lineage-item"><strong>Son of:</strong> Sri V. Ramakrishna Raju & Smt. Saraswathi Devi</p>
+          <p class="lineage-item"><strong>Ancestral:</strong> Velicheti Family, Bhimavaram</p>
+          <div class="profile-astrology">
+            <span><strong>గోత్రం:</strong> భరద్వాజ</span>
+            <span><strong>రాశి:</strong> వృషభం</span>
+            <span><strong>నక్షత్రం:</strong> రోహిణి</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SACRED KNOT DIVIDER -->
+      <div class="couple-knot-connector reveal-up">
+        <div class="knot-gold-ring">
+          <svg viewBox="0 0 32 32" class="knot-svg">
+            <path d="M16 4 C22 4 28 10 28 16 C28 22 22 28 16 28 C10 28 4 22 4 16 C4 10 10 4 16 4 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M10 16 C10 12 14 10 16 10 C18 10 22 12 22 16 C22 20 18 22 16 22 C14 22 10 20 10 16 Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="16" cy="16" r="3" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="knot-telugu-lbl">శుభ ముడి</span>
+      </div>
+
+      <!-- BRIDE -->
+      <div class="royal-card profile-card reveal-up">
+        <div class="profile-tag">చిరంజీవి లక్ష్మీ సౌభాగ్యవతి · THE BRIDE</div>
+        <h3 class="profile-name">Divya Narayana</h3>
+        <p class="profile-degree">B.Arch (Principal Landscape Architect)</p>
+        
+        <div class="profile-divider"></div>
+        
+        <div class="profile-lineage">
+          <p class="lineage-item"><strong>Daughter of:</strong> Sri K. Narayana Murthy & Smt. Padmavathi Devi</p>
+          <p class="lineage-item"><strong>Ancestral:</strong> Kakarlapudi Family, Hyderabad</p>
+          <div class="profile-astrology">
+            <span><strong>గోత్రం:</strong> కశ్యప</span>
+            <span><strong>రాశి:</strong> కన్య</span>
+            <span><strong>నక్షత్రం:</strong> హస్త</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 4. SACRED RITUALS TIMELINE (శుభకార్య వివరాలు) ======================== -->
+  <section class="section rituals-section" id="events">
+    <div class="section-badge reveal-up">
+      <span class="badge-line"></span>
+      <span class="badge-text">శుభ కార్యములు · SACRED RITUALS</span>
+      <span class="badge-line"></span>
+    </div>
+    
+    <p class="section-subtitle reveal-up">Join us in each auspicious step of this sacred journey</p>
+
+    <div class="timeline-container">
+      <div class="timeline-track"></div>
+
+      <!-- RITUAL 1: PELLIKUTHURU & PELLIKODUKU -->
+      <div class="timeline-item reveal-up">
+        <div class="timeline-marker">
+          <svg viewBox="0 0 24 24" class="marker-svg"><circle cx="12" cy="12" r="10" fill="currentColor"/></svg>
+        </div>
+        <div class="royal-card ritual-card">
+          <div class="ritual-header">
+            <span class="ritual-number">01</span>
+            <div class="ritual-meta-title">
+              <span class="ritual-tag">మంగళస్నానం & హల్దీ</span>
+              <h4 class="ritual-name">Pellikuthuru & Pellikoduku</h4>
+              <p class="ritual-name-telugu">పెళ్ళికూతురు & పెళ్ళికొడుకు వేడుక</p>
+            </div>
+          </div>
+          <div class="ritual-time-box">
+            <div class="rt-row">
+              <svg viewBox="0 0 24 24" class="rt-icon"><rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.8"/></svg>
+              <span>శనివారం, 14 నవంబర్ 2026 · ఉదయం 9:30 AM</span>
+            </div>
+            <div class="rt-row">
+              <svg viewBox="0 0 24 24" class="rt-icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/></svg>
+              <span>వరిష్ట నివాసాలలో (Respective Residences)</span>
+            </div>
+          </div>
+          <p class="ritual-desc">
+            The auspicious smearing of fragrant turmeric paste (Pasupu) and sacred oil bath, followed by gifting traditional new pattu clothes to invoke blessings.
+          </p>
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pellikuthuru+Pellikoduku+-+Srikanth+%26+Divya&dates=20261114T040000Z/20261114T063000Z&details=Haldi+and+Mangala+Snanam+ceremony&location=Hyderabad" target="_blank" rel="noopener" class="ritual-cal-btn">
+            <svg viewBox="0 0 24 24" class="cal-mini-icon"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" fill="currentColor"/></svg>
+            Add to Calendar
+          </a>
+        </div>
+      </div>
+
+      <!-- RITUAL 2: MEHENDI & SANGEETH -->
+      <div class="timeline-item reveal-up">
+        <div class="timeline-marker">
+          <svg viewBox="0 0 24 24" class="marker-svg"><circle cx="12" cy="12" r="10" fill="currentColor"/></svg>
+        </div>
+        <div class="royal-card ritual-card">
+          <div class="ritual-header">
+            <span class="ritual-number">02</span>
+            <div class="ritual-meta-title">
+              <span class="ritual-tag ritual-tag--rose">సంగీత సంధ్య</span>
+              <h4 class="ritual-name">Mehendi & Sangeeth Sambhramam</h4>
+              <p class="ritual-name-telugu">మెహందీ & సంగీత్ సంబరం</p>
+            </div>
+          </div>
+          <div class="ritual-time-box">
+            <div class="rt-row">
+              <svg viewBox="0 0 24 24" class="rt-icon"><rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.8"/></svg>
+              <span>శనివారం, 14 నవంబర్ 2026 · సాయంత్రం 6:30 PM నుండి</span>
+            </div>
+            <div class="rt-row">
+              <svg viewBox="0 0 24 24" class="rt-icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/></svg>
+              <span>The Grand Lawn, Novotel HICC, Hyderabad</span>
+            </div>
+          </div>
+          <p class="ritual-desc">
+            An exuberant evening of classical Telugu folk dances, bridal henna adornment, soulful music, and joyous family performances.
+          </p>
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sangeeth+Sambhramam+-+Srikanth+%26+Divya&dates=20261114T130000Z/20261114T170000Z&details=Mehendi+and+Sangeeth+Celebration&location=Novotel+HICC+Hyderabad" target="_blank" rel="noopener" class="ritual-cal-btn">
+            <svg viewBox="0 0 24 24" class="cal-mini-icon"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" fill="currentColor"/></svg>
+            Add to Calendar
+          </a>
+        </div>
+      </div>
+
+      <!-- RITUAL 3: PRADHANA KALYANA MUHURTHAM (CROWN JEWEL EVENT) -->
+      <div class="timeline-item timeline-item--crown reveal-up">
+        <div class="timeline-marker timeline-marker--gold">
+          <svg viewBox="0 0 24 24" class="marker-svg marker-svg--crown"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5m14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z" fill="currentColor"/></svg>
+        </div>
+        <div class="royal-card ritual-card ritual-card--highlight">
+          <div class="crown-ribbon">
+            <span>ప్రధాన కల్యాణ మహోత్సవం · SACRED MUHURTHAM</span>
+          </div>
+          <div class="ritual-header">
+            <span class="ritual-number ritual-number--gold">03</span>
+            <div class="ritual-meta-title">
+              <span class="ritual-tag ritual-tag--gold">జీలకర్ర బెల్లం & మాంగల్యధారణ</span>
+              <h4 class="ritual-name">Pradhana Kalyana Mahotsavam</h4>
+              <p class="ritual-name-telugu">కల్యాణ వేడుక — శుభ ముహూర్తం</p>
+            </div>
+          </div>
+          <div class="ritual-time-box ritual-time-box--gold">
+            <div class="rt-row">
+              <svg viewBox="0 0 24 24" class="rt-icon"><rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.8"/></svg>
+              <span><strong>ఆదివారం, 15 నవంబర్ 2026</strong></span>
+            </div>
+            <div class="rt-row">
+              <svg viewBox="0 0 24 24" class="rt-icon"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.8"/></svg>
+              <span><strong>సుముహూర్తం: ఉదయం 07:15 AM (వృషభ లగ్నమందు)</strong></span>
+            </div>
+            <div class="rt-row">
+              <svg viewBox="0 0 24 24" class="rt-icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/></svg>
+              <span>శ్రీ వేంకటేశ్వర కల్యాణ మండపం, రోడ్ నం. 36, జూబ్లీహిల్స్, హైదరాబాద్</span>
+            </div>
+          </div>
+          <p class="ritual-desc">
+            The sanctified Vedic ceremonies: Kashi Yatra, Kanyadanam, placing of Jeelakarra-Bellam at the precise divine Muhurtham, tying of the sacred Mangalasutra, and the divine Talambralu shower of pearls and unbroken turmeric rice.
+          </p>
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Muhurtham+-+Srikanth+%26+Divya&dates=20261115T014500Z/20261115T050000Z&details=Sacred+Telugu+Wedding+Muhurtham&location=Sri+Venkateswara+Kalyana+Mandapam+Jubilee+Hills+Hyderabad" target="_blank" rel="noopener" class="ritual-cal-btn ritual-cal-btn--gold">
+            <svg viewBox="0 0 24 24" class="cal-mini-icon"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" fill="currentColor"/></svg>
+            Add Muhurtham to Calendar
+          </a>
+        </div>
+      </div>
+
+      <!-- RITUAL 4: TRADITIONAL FEAST (విందు భోజనం) -->
+      <div class="timeline-item reveal-up">
+        <div class="timeline-marker">
+          <svg viewBox="0 0 24 24" class="marker-svg"><circle cx="12" cy="12" r="10" fill="currentColor"/></svg>
+        </div>
+        <div class="royal-card ritual-card">
+          <div class="ritual-header">
+            <span class="ritual-number">04</span>
+            <div class="ritual-meta-title">
+              <span class="ritual-tag ritual-tag--green">సాంప్రదాయ విందు భోజనం</span>
+              <h4 class="ritual-name">Kalyana Vindu Bhojanam</h4>
+              <p class="ritual-name-telugu">అరటి ఆకు సాంప్రదాయ విందు</p>
+            </div>
+          </div>
+          <div class="ritual-time-box">
+            <div class="rt-row">
+              <svg viewBox="0 0 24 24" class="rt-icon"><rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.8"/></svg>
+              <span>ఆదివారం, 15 నవంబర్ 2026 · మధ్యాహ్నం 12:30 PM</span>
+            </div>
+            <div class="rt-row">
+              <svg viewBox="0 0 24 24" class="rt-icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/></svg>
+              <span>కల్యాణ భోజన శాల, శ్రీ వేంకటేశ్వర కల్యాణ మండపం</span>
+            </div>
+          </div>
+          <p class="ritual-desc">
+            A grand traditional Andhra-Telugu vegetarian wedding banquet served ceremoniously on freshly cut banana leaves with authentic delicacies, sweet bobbatlu, and fragrant paan.
+          </p>
+        </div>
+      </div>
+
+      <!-- RITUAL 5: RECEPTION (రిసెప్షన్) -->
+      <div class="timeline-item reveal-up">
+        <div class="timeline-marker">
+          <svg viewBox="0 0 24 24" class="marker-svg"><circle cx="12" cy="12" r="10" fill="currentColor"/></svg>
+        </div>
+        <div class="royal-card ritual-card">
+          <div class="ritual-header">
+            <span class="ritual-number">05</span>
+            <div class="ritual-meta-title">
+              <span class="ritual-tag ritual-tag--purple">రిసెప్షన్ వేడుక</span>
+              <h4 class="ritual-name">Grand Wedding Reception</h4>
+              <p class="ritual-name-telugu">ఆశీర్వాద సభ & విందు</p>
+            </div>
+          </div>
+          <div class="ritual-time-box">
+            <div class="rt-row">
+              <svg viewBox="0 0 24 24" class="rt-icon"><rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.8"/></svg>
+              <span>ఆదివారం, 15 నవంబర్ 2026 · సాయంత్రం 7:00 PM</span>
+            </div>
+            <div class="rt-row">
+              <svg viewBox="0 0 24 24" class="rt-icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/></svg>
+              <span>Grand Ballroom, Taj Krishna, Banjara Hills, Hyderabad</span>
+            </div>
+          </div>
+          <p class="ritual-desc">
+            An evening of warm fellowship, felicitations, and celebration to bless the newlyweds as they commence their life journey together.
+          </p>
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Reception+-+Srikanth+%26+Divya&dates=20261115T133000Z/20261115T173000Z&details=Reception+Dinner+and+Celebrations&location=Taj+Krishna+Banjara+Hills+Hyderabad" target="_blank" rel="noopener" class="ritual-cal-btn">
+            <svg viewBox="0 0 24 24" class="cal-mini-icon"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" fill="currentColor"/></svg>
+            Add to Calendar
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================== 5. DIVINE BLESSINGS (దేవతానుగ్రహం) ======================== -->
+  <section class="section blessings-section" id="blessings">
+    <div class="section-badge reveal-up">
+      <span class="badge-line"></span>
+      <span class="badge-text">దైవానుగ్రహం · DIVINE BLESSINGS</span>
+      <span class="badge-line"></span>
+    </div>
+
+    <!-- Tirupati Balaji Masterpiece Highlight Card -->
+    <div class="balaji-hero-card royal-card reveal-up">
+      <div class="balaji-portrait-wrap">
+        <img src="assets/balaji_art.jpg" alt="Lord Venkateswara Tirupati Balaji" class="balaji-img"/>
+      </div>
+      <div class="balaji-info">
+        <span class="balaji-tag">కులదైవం · KULA DAIVAM</span>
+        <h3 class="balaji-name">Lord Sri Venkateswara Swamy</h3>
+        <p class="balaji-stotram">"శ్రీ వేంకటేశ్వర చరణౌ శరణం ప్రపద్యే"</p>
+        <p class="balaji-desc">
+          Under the benevolence of the Lord of the Seven Hills, we seek everlasting protection, prosperity, and joy for this holy union.
+        </p>
+      </div>
+    </div>
+
+    <!-- Other Auspicious Deities in Elegant Gold Foil Cards (NO EMOJIS!) -->
+    <div class="deity-grid">
+      <!-- Vigneshwara -->
+      <div class="royal-card deity-card reveal-up">
+        <div class="deity-icon-gold">
+          <svg viewBox="0 0 24 24" class="deity-svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/></svg>
+        </div>
+        <h4 class="deity-title">శ్రీ మహాగణపతి</h4>
+        <p class="deity-mantra">"ఓం గం గణపతయే నమః"</p>
+        <p class="deity-blessing">Vighnaharta — Remover of all obstacles, guiding every step with divine wisdom.</p>
+      </div>
+
+      <!-- Mahalakshmi -->
+      <div class="royal-card deity-card reveal-up">
+        <div class="deity-icon-gold">
+          <svg viewBox="0 0 24 24" class="deity-svg"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="currentColor"/></svg>
+        </div>
+        <h4 class="deity-title">శ్రీ మహాలక్ష్మీ దేవి</h4>
+        <p class="deity-mantra">"ఓం శ్రీం మహాలక్ష్మ్యై నమః"</p>
+        <p class="deity-blessing">Bestower of eternal peace, auspicious abundance, and auspicious grace upon the home.</p>
+      </div>
+
+      <!-- Subrahmanya Swamy -->
+      <div class="royal-card deity-card reveal-up">
+        <div class="deity-icon-gold">
+          <svg viewBox="0 0 24 24" class="deity-svg"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z" fill="currentColor"/></svg>
+        </div>
+        <h4 class="deity-title">శ్రీ సుబ్రహ్మణ్య స్వామి</h4>
+        <p class="deity-mantra">"ఓం శరవణభవాయ నమః"</p>
+        <p class="deity-blessing">The eternal protector, showering valour, righteous purpose, and family harmony.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 6. VENUE & ROUTE (కల్యాణ వేదిక) ======================== -->
+  <section class="section venue-section" id="venue">
+    <div class="section-badge reveal-up">
+      <span class="badge-line"></span>
+      <span class="badge-text">కల్యాణ వేదిక · VENUE & LOCATION</span>
+      <span class="badge-line"></span>
+    </div>
+
+    <div class="royal-card venue-card reveal-up">
+      <div class="venue-temple-badge">
+        <svg viewBox="0 0 24 24" class="temple-icon-svg">
+          <path d="M12 2L2 9h3v12h14V9h3L12 2zm0 4.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 10.38 9.5 9s1.12-2.5 2.5-2.5zM14 19h-4v-5h4v5z" fill="currentColor"/>
+        </svg>
+      </div>
+
+      <h3 class="venue-title">Sri Venkateswara Kalyana Mandapam</h3>
+      <p class="venue-title-telugu">శ్రీ వేంకటేశ్వర కల్యాణ మండపం</p>
+      
+      <div class="venue-address-box">
+        <p class="venue-address-line">Plot No. 42, Road No. 36, Jubilee Hills</p>
+        <p class="venue-address-line">Near Peddamma Gudi Metro Station, Hyderabad – 500033</p>
+        <p class="venue-landmark">Landmark: Opposite Peddamma Temple Arch</p>
+      </div>
+
+      <div class="venue-facilities">
+        <div class="v-fac-item">
+          <svg viewBox="0 0 24 24" class="v-fac-icon"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" fill="currentColor"/></svg>
+          <span>Valet & Multi-level Parking</span>
+        </div>
+        <div class="v-fac-item">
+          <svg viewBox="0 0 24 24" class="v-fac-icon"><path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-4-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z" fill="currentColor"/></svg>
+          <span>Metro Accessible (300m)</span>
+        </div>
+      </div>
+
+      <div class="venue-actions">
+        <a href="https://maps.google.com/?q=Jubilee+Hills+Peddamma+Temple+Hyderabad" target="_blank" rel="noopener" class="venue-btn venue-btn--maps" id="btn-maps">
+          <svg viewBox="0 0 24 24" class="btn-action-icon"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
+          Google Maps Directions
+        </a>
+        <a href="https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[formatted_address]=Jubilee%20Hills%20Road%2036%20Hyderabad" target="_blank" rel="noopener" class="venue-btn venue-btn--ride" id="btn-ride">
+          <svg viewBox="0 0 24 24" class="btn-action-icon"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="currentColor"/></svg>
+          Book Ride to Venue
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 7. BLESSINGS & RSVP (శుభాకాంక్షలు) ======================== -->
+  <section class="section rsvp-section" id="rsvp">
+    <div class="section-badge reveal-up">
+      <span class="badge-line"></span>
+      <span class="badge-text">ఆశీస్సులు & నివేదన · RSVP</span>
+      <span class="badge-line"></span>
+    </div>
+
+    <p class="section-subtitle reveal-up">
+      మీ రాక మాకెంతో సంతోషం. దయచేసి మీ హాజరును తెలియజేయండి.
+    </p>
+
+    <div class="royal-card rsvp-card reveal-up">
+      <form class="rsvp-form" id="rsvp-form" onsubmit="handleRSVP(event)">
+        
+        <div class="form-field">
+          <label for="rsvp-name">మీ పేరు · Full Name *</label>
+          <input type="text" id="rsvp-name" placeholder="ఉదా: Sharma Garu" required/>
+        </div>
+
+        <div class="form-field">
+          <label for="rsvp-phone">ఫోన్ నంబర్ · Contact Number</label>
+          <input type="tel" id="rsvp-phone" placeholder="+91 98765 43210"/>
+        </div>
+
+        <div class="form-field">
+          <label for="rsvp-count">అతిథుల సంఖ్య · Number of Guests</label>
+          <select id="rsvp-count">
+            <option value="1">1 Person</option>
+            <option value="2" selected>2 Persons</option>
+            <option value="3">3 Persons</option>
+            <option value="4">4 Persons</option>
+            <option value="5+">Family (5+ Persons)</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label>వివాహ వేడుకకు విచ్చేస్తున్నారా? · Will you attend?</label>
+          <div class="attendance-options">
+            <label class="attendance-pill">
+              <input type="radio" name="attend" value="yes" checked/>
+              <span class="pill-body">
+                <svg viewBox="0 0 24 24" class="pill-icon"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" fill="currentColor"/></svg>
+                సంతోషంగా హాజరవుతాం (Joyfully Attending)
+              </span>
+            </label>
+            <label class="attendance-pill">
+              <input type="radio" name="attend" value="no"/>
+              <span class="pill-body">
+                <svg viewBox="0 0 24 24" class="pill-icon"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg>
+                మన్నించగలరు (With Regrets)
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="rsvp-blessing">వధూవరులకు మీ ఆశీస్సులు · Your Blessings for the Couple</label>
+          <textarea id="rsvp-blessing" rows="3" placeholder="నూతన వధూవరులకు మీ హృదయపూర్వక ఆశీస్సులు వ్రాయండి..."></textarea>
+        </div>
+
+        <button type="submit" class="rsvp-submit-btn" id="btn-submit-rsvp">
+          <svg viewBox="0 0 24 24" class="btn-action-icon"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"/></svg>
+          ఆశీస్సులను పంపండి · Send Blessings
+        </button>
+      </form>
+
+      <!-- Success State -->
+      <div id="rsvp-success" class="rsvp-success" style="display:none">
+        <div class="success-kalash">
+          <svg viewBox="0 0 100 100" class="kalash-gold-svg">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="#C89B3C" stroke-width="2"/>
+            <path d="M35 70 L65 70 L60 48 L40 48 Z" fill="#DDB14E"/>
+            <circle cx="50" cy="36" r="10" fill="#C89B3C"/>
+            <path d="M30 46 Q50 20 70 46" fill="none" stroke="#2E7D32" stroke-width="3"/>
+          </svg>
+        </div>
+        <h3 class="success-title">మీ ఆశీర్వాదాలకు ధన్యవాదాలు!</h3>
+        <p class="success-msg">Your blessings and RSVP have been received with deep gratitude.</p>
+        <p class="success-sub">మీ రాక కోసం మా రెండు కుటుంబాలు వేచి చూస్తున్నాయి.</p>
+      </div>
+    </div>
+
+    <!-- Live Blessings Guestbook Wall -->
+    <div class="blessings-wall reveal-up">
+      <h4 class="wall-title">ఆశీర్వాద పరంపర · Sacred Blessings Wall</h4>
+      <div class="wall-cards" id="blessings-stream">
+        <div class="wall-blessing-item">
+          <p class="blessing-quote">"నూరేళ్ళ సంసార జీవితం సుఖసంతోషాలతో, ఆయురారోగ్యాలతో వర్ధిల్లాలని మనసారా కోరుకుంటున్నాము. శుభాకాంక్షలు!"</p>
+          <span class="blessing-author">— డా. రామ్మోహన్ రావు & కుటుంబం, విజయవాడ</span>
+        </div>
+        <div class="wall-blessing-item">
+          <p class="blessing-quote">"May Lord Venkateswara shower eternal grace and abundance on Srikanth & Divya as you embark on this beautiful sacred chapter."</p>
+          <span class="blessing-author">— Venkat & Shanti Varma, Bengaluru</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== 8. ROYAL FOOTER ======================== -->
+  <footer class="footer" id="footer">
+    <div class="footer__muggu-art"></div>
+    <div class="footer__content">
+      <div class="footer__om-emblem">
+        <svg viewBox="0 0 100 100" class="om-svg"><text x="50" y="65" text-anchor="middle" font-size="52" font-family="'Marcellus', serif" fill="currentColor">ॐ</text></svg>
+      </div>
+
+      <h2 class="footer__names">Srikanth &amp; Divya</h2>
+      <p class="footer__date">15TH NOVEMBER 2026 · HYDERABAD</p>
+      
+      <div class="footer__divider">
+        <svg viewBox="0 0 200 20" class="gold-filigree"><path d="M0 10 Q50 0 100 10 Q150 20 200 10" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="100" cy="10" r="3.5" fill="currentColor"/></svg>
+      </div>
+
+      <button class="footer__share-btn" id="btn-share" onclick="shareInvite()">
+        <svg viewBox="0 0 24 24" class="btn-action-icon"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z" fill="currentColor"/></svg>
+        ఆహ్వానాన్ని పంచుకోండి · Share Invitation
+      </button>
+
+      <p class="footer__bless-stanza">
+        "సర్వేజనాః సుఖినో భవంతు · సమస్త సన్మంగళాని భవంతు"<br/>
+        <span>May all beings be happy · May all auspiciousness prevail</span>
+      </p>
+
+      <div class="footer__copyright">
+        Designed with devotion for the sacred wedding of Srikanth & Divya
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================== 9. LUXURY FLOATING DOCK (REBUILT BOTTOM NAV) ======================== -->
+  <nav class="luxury-dock" id="bottom-dock" aria-label="Main Navigation">
+    <div class="dock-backdrop"></div>
+    <div class="dock-indicator" id="dock-indicator"></div>
+    
+    <div class="dock-items">
+      <!-- 1. HOME -->
+      <a href="#hero" class="dock-item active" data-index="0" aria-label="Home">
+        <svg viewBox="0 0 24 24" class="dock-svg">
+          <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        <span class="dock-label">HOME</span>
+      </a>
+
+      <!-- 2. COUPLE -->
+      <a href="#couple" class="dock-item" data-index="1" aria-label="Couple">
+        <svg viewBox="0 0 24 24" class="dock-svg">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <span class="dock-label">COUPLE</span>
+      </a>
+
+      <!-- 3. RITUALS / MUHURTHAM -->
+      <a href="#events" class="dock-item" data-index="2" aria-label="Rituals">
+        <svg viewBox="0 0 24 24" class="dock-svg">
+          <rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="12" cy="15" r="1.5" fill="currentColor"/>
+        </svg>
+        <span class="dock-label">RITUALS</span>
+      </a>
+
+      <!-- 4. VENUE -->
+      <a href="#venue" class="dock-item" data-index="3" aria-label="Venue">
+        <svg viewBox="0 0 24 24" class="dock-svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="12" cy="9" r="2.5" fill="currentColor"/>
+        </svg>
+        <span class="dock-label">VENUE</span>
+      </a>
+
+      <!-- 5. RSVP -->
+      <a href="#rsvp" class="dock-item" data-index="4" aria-label="RSVP">
+        <svg viewBox="0 0 24 24" class="dock-svg">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <span class="dock-label">RSVP</span>
+      </a>
+    </div>
+  </nav>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
